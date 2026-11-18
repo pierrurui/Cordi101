@@ -1,0 +1,824 @@
+/* ==========================================================================
+   Cordillera Highland Agro-Policy Brief — Stylesheet
+   ========================================================================== */
+
+:root {
+  --pine: #1b3b2b;
+  --pine-mid: #2c5e43;
+  --pine-light: #e7f0eb;
+  --terracotta: #c85a32;
+  --terracotta-soft: #f9ebe5;
+  --amber: #d98a2b;
+  --mist: #f6f7f4;
+  --surface: #ffffff;
+  --ink: #1e2421;
+  --muted: #526059;
+  --border: #dce2dd;
+  --radius: 14px;
+  --shadow: 0 8px 24px rgba(27, 59, 43, 0.06);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background-color: var(--mist);
+  color: var(--ink);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  width: min(1140px, 92%);
+  margin-inline: auto;
+}
+
+/* Cordillera Woven Geometric Top Stripe */
+.woven-banner {
+  height: 10px;
+  width: 100%;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--pine) 0px,
+    var(--pine) 24px,
+    var(--amber) 24px,
+    var(--amber) 32px,
+    var(--terracotta) 32px,
+    var(--terracotta) 56px,
+    var(--amber) 56px,
+    var(--amber) 64px
+  );
+}
+
+/* Header & Navigation */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 0.9rem 0;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: var(--ink);
+}
+
+.brand-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: var(--pine);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-title {
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.2;
+}
+
+.brand-sub {
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.4rem;
+}
+
+.site-nav a {
+  text-decoration: none;
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.site-nav a:hover {
+  color: var(--pine);
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--pine) 0%, #132a1f 100%);
+  color: #ffffff;
+  padding: 4.5rem 0 4rem;
+}
+
+.hero-pattern {
+  position: absolute;
+  inset: 0;
+  opacity: 0.08;
+  background-image: radial-gradient(#ffffff 1px, transparent 1px);
+  background-size: 22px 22px;
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.eyebrow {
+  display: inline-block;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  background: rgba(217, 138, 43, 0.2);
+  border: 1px solid rgba(217, 138, 43, 0.45);
+  color: #f6c478;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 1.1rem;
+}
+
+.hero h1 {
+  font-family: "Merriweather", Georgia, serif;
+  font-size: clamp(1.9rem, 3.6vw, 2.85rem);
+  line-height: 1.22;
+  max-width: 860px;
+  margin-bottom: 1.1rem;
+}
+
+.hero-lead {
+  font-size: 1.08rem;
+  color: #d9e4de;
+  max-width: 760px;
+  margin-bottom: 2.5rem;
+}
+
+/* KPI Grid */
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.kpi-card {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.kpi-value {
+  font-family: "Merriweather", Georgia, serif;
+  font-size: 1.85rem;
+  font-weight: 900;
+  color: #f6c478;
+}
+
+.kpi-label {
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.kpi-detail {
+  font-size: 0.8rem;
+  color: #c5d6cd;
+  line-height: 1.4;
+}
+
+/* Main Content & Sections */
+.main-content {
+  padding: 3.5rem 0 4.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.section-header {
+  margin-bottom: 1.5rem;
+}
+
+.section-tag {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--terracotta);
+  margin-bottom: 0.35rem;
+}
+
+.section-header h2 {
+  font-family: "Merriweather", Georgia, serif;
+  font-size: clamp(1.45rem, 2.5vw, 1.95rem);
+  color: var(--pine);
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+  box-shadow: var(--shadow);
+}
+
+/* Photo Documentary Cards & Grids */
+.editorial-duo {
+  display: grid;
+  grid-template-columns: 0.78fr 1.22fr;
+  gap: 1.35rem;
+  margin-top: 1.5rem;
+}
+
+.evidence-trio {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.photo-card {
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.photo-frame {
+  width: 100%;
+  overflow: hidden;
+  background: #e5eae6;
+}
+
+.editorial-duo .photo-frame {
+  height: 310px;
+}
+
+.evidence-trio .photo-frame {
+  height: 215px;
+}
+
+.photo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 25%;
+  display: block;
+  cursor: zoom-in;
+  transition: transform 0.35s ease;
+}
+
+.photo-card:hover .photo-frame img {
+  transform: scale(1.03);
+}
+
+.photo-card figcaption {
+  padding: 1.1rem 1.25rem 1.25rem;
+  font-size: 0.86rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.photo-card figcaption strong {
+  color: var(--ink);
+}
+
+.photo-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--terracotta);
+  background: var(--terracotta-soft);
+  padding: 0.18rem 0.55rem;
+  border-radius: 6px;
+  margin-bottom: 0.45rem;
+  margin-right: 0.35rem;
+}
+
+/* Section 1: Issue Layout & Bar Chart */
+.issue-layout {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.issue-narrative p + p {
+  margin-top: 1rem;
+}
+
+.callout-box {
+  margin-top: 1.35rem;
+  padding: 1rem 1.15rem;
+  border-left: 4px solid var(--terracotta);
+  background: var(--terracotta-soft);
+  border-radius: 0 10px 10px 0;
+  font-size: 0.93rem;
+}
+
+.chart-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin-bottom: 1.25rem;
+}
+
+.chart-header h3 {
+  font-size: 1.1rem;
+  color: var(--pine);
+}
+
+.chart-subtitle {
+  font-size: 0.84rem;
+  color: var(--muted);
+}
+
+.toggle-group {
+  display: inline-flex;
+  background: var(--mist);
+  padding: 0.25rem;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  width: fit-content;
+}
+
+.toggle-btn {
+  border: none;
+  background: transparent;
+  padding: 0.42rem 0.85rem;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--muted);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.toggle-btn.active {
+  background: var(--pine);
+  color: #ffffff;
+}
+
+.bar-chart {
+  display: flex;
+  flex-direction: column;
+  gap: 0.95rem;
+}
+
+.bar-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.88rem;
+  margin-bottom: 0.3rem;
+}
+
+.bar-track {
+  height: 11px;
+  background: var(--mist);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  border-radius: 999px;
+  transition: width 0.45s ease;
+}
+
+.chart-footnote {
+  margin-top: 1.15rem;
+  font-size: 0.76rem;
+  color: var(--muted);
+}
+
+/* Section 2: Supply Chain & Root Causes */
+.chain-panel {
+  margin-bottom: 1.5rem;
+}
+
+.chain-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.35rem;
+}
+
+.chain-top h3 {
+  color: var(--pine);
+  font-size: 1.12rem;
+}
+
+.muted-text {
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+
+.chain-flow {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
+  gap: 0.85rem;
+}
+
+.chain-node {
+  padding: 1rem;
+  border-radius: 12px;
+  background: var(--mist);
+  border: 1px solid var(--border);
+  position: relative;
+}
+
+.chain-node.direct-node {
+  background: var(--pine-light);
+  border-color: #b8d3c4;
+}
+
+.node-step {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--terracotta);
+  margin-bottom: 0.25rem;
+}
+
+.chain-node.direct-node .node-step {
+  color: var(--pine);
+}
+
+.chain-node strong {
+  display: block;
+  font-size: 0.94rem;
+  margin-bottom: 0.25rem;
+}
+
+.chain-node p {
+  font-size: 0.82rem;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+.chain-summary {
+  margin-top: 1rem;
+  padding-top: 0.85rem;
+  border-top: 1px dashed var(--border);
+  font-size: 0.9rem;
+}
+
+.causes-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+
+.cause-card-wide {
+  grid-column: 1 / -1;
+}
+
+.cause-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: var(--pine-light);
+  color: var(--pine);
+  font-weight: 700;
+  font-size: 0.85rem;
+  margin-bottom: 0.75rem;
+}
+
+.cause-card h3 {
+  font-size: 1.06rem;
+  color: var(--pine);
+  margin-bottom: 0.5rem;
+}
+
+.cause-card p {
+  font-size: 0.93rem;
+  color: #313b36;
+}
+
+/* Section 3: Solutions */
+.solutions-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.35rem;
+}
+
+.solution-card {
+  display: flex;
+  flex-direction: column;
+  border-top: 4px solid var(--pine);
+}
+
+.solution-badge {
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--amber);
+  margin-bottom: 0.5rem;
+}
+
+.solution-card h3 {
+  font-size: 1.08rem;
+  color: var(--pine);
+  margin-bottom: 0.65rem;
+}
+
+.solution-card p {
+  font-size: 0.92rem;
+  margin-bottom: 1rem;
+}
+
+.solution-list {
+  margin-top: auto;
+  padding-left: 1.15rem;
+  font-size: 0.86rem;
+  color: var(--muted);
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+/* Section 4: Simulator */
+.simulator-box {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.sim-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+}
+
+.control-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.control-group label {
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.val-pill {
+  background: var(--pine-light);
+  color: var(--pine);
+  font-weight: 700;
+  font-size: 0.82rem;
+  padding: 0.15rem 0.6rem;
+  border-radius: 999px;
+}
+
+select {
+  padding: 0.65rem 0.8rem;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  font-family: inherit;
+  font-size: 0.9rem;
+  background: var(--mist);
+  color: var(--ink);
+}
+
+input[type="range"] {
+  accent-color: var(--pine);
+  cursor: pointer;
+}
+
+.checkbox-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 0.86rem;
+  cursor: pointer;
+  padding: 0.75rem;
+  background: var(--mist);
+  border-radius: 10px;
+  border: 1px solid var(--border);
+}
+
+.checkbox-row input {
+  margin-top: 0.22rem;
+  accent-color: var(--pine);
+}
+
+.sim-results {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.result-metric {
+  padding: 1.15rem;
+  border-radius: 12px;
+  background: var(--mist);
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.res-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.res-value {
+  font-family: "Merriweather", Georgia, serif;
+  font-size: 1.35rem;
+  color: var(--pine);
+}
+
+.res-sub {
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.result-metric.loss {
+  background: var(--terracotta-soft);
+  border-color: #e6b8a8;
+}
+
+.result-metric.loss .res-value {
+  color: var(--terracotta);
+}
+
+.result-metric.profit {
+  background: var(--pine-light);
+  border-color: #b4d2c1;
+}
+
+.result-metric.profit .res-value {
+  color: var(--pine);
+}
+
+/* Footer */
+.site-footer {
+  background: var(--pine);
+  color: #d9e4de;
+  padding: 2.25rem 0;
+  font-size: 0.86rem;
+}
+
+.footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.site-footer strong {
+  color: #ffffff;
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.footer-note {
+  color: #aac0b4;
+}
+
+/* Lightbox Modal */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgba(15, 28, 21, 0.88);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.lightbox.open {
+  display: flex;
+}
+
+.lightbox-dialog {
+  position: relative;
+  max-width: 900px;
+  width: 100%;
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 1rem;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+}
+
+.lightbox-dialog img {
+  width: 100%;
+  max-height: 75vh;
+  object-fit: contain;
+  border-radius: 10px;
+  background: #121815;
+  display: block;
+}
+
+.lightbox-dialog p {
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  color: var(--ink);
+  padding-inline: 0.35rem;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 0.65rem;
+  right: 0.65rem;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: var(--pine);
+  color: #ffffff;
+  font-size: 1.35rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 960px) {
+  .kpi-grid,
+  .solutions-grid,
+  .evidence-trio {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .issue-layout,
+  .simulator-box,
+  .editorial-duo {
+    grid-template-columns: 1fr;
+  }
+
+  .editorial-duo .photo-frame {
+    height: 270px;
+  }
+}
+
+@media (max-width: 640px) {
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .kpi-grid,
+  .causes-grid,
+  .solutions-grid,
+  .sim-results,
+  .evidence-trio {
+    grid-template-columns: 1fr;
+  }
+}

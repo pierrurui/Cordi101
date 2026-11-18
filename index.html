@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cordillera Highland Vegetable Farmers — Policy Brief</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Cordillera Woven Geometric Top Border -->
+  <div class="woven-banner" aria-hidden="true"></div>
+
+  <!-- Navigation Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#top" class="brand">
+        <span class="brand-mark" aria-hidden="true">CAR</span>
+        <div class="brand-text">
+          <span class="brand-title">Cordillera Agro-Policy Brief</span>
+          <span class="brand-sub">Indigenous Peoples &amp; Highland Agriculture</span>
+        </div>
+      </a>
+
+      <nav class="site-nav" aria-label="Primary Navigation">
+        <a href="#the-issue">The Issue</a>
+        <a href="#root-cause">Root Cause</a>
+        <a href="#proposed-solution">Proposed Solution</a>
+        <a href="#simulator">Impact Simulator</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="top" class="hero">
+    <div class="hero-pattern" aria-hidden="true"></div>
+    <div class="container hero-content">
+      <span class="eyebrow">Cordillera Administrative Region • Benguet &amp; Mountain Province</span>
+      <h1>Income Instability &amp; Supply Chain Vulnerability of Highland Vegetable Farmers</h1>
+      <p class="hero-lead">
+        Indigenous Ibaloi and Kankanaey smallholder farmers produce the bulk of the Philippines’
+        temperate vegetables—yet structural supply-chain bottlenecks, informal debt traps, and
+        market shocks leave growers bearing the highest financial risk.
+      </p>
+
+      <!-- Key Metrics Strip -->
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <span class="kpi-value">89%</span>
+          <span class="kpi-label">National Potato Supply</span>
+          <span class="kpi-detail">Produced in Benguet alongside 82% of carrots &amp; 67% of cabbage</span>
+        </div>
+        <div class="kpi-card">
+          <span class="kpi-value">&gt;40%</span>
+          <span class="kpi-label">Post-Harvest Spoilage</span>
+          <span class="kpi-detail">Lost in conventional unrefrigerated highland-to-lowland transit</span>
+        </div>
+        <div class="kpi-card">
+          <span class="kpi-value">96%</span>
+          <span class="kpi-label">Spot-Market Reliance</span>
+          <span class="kpi-detail">Of cabbage passes through multi-tier intermediary channels</span>
+        </div>
+        <div class="kpi-card">
+          <span class="kpi-value">5 Tiers</span>
+          <span class="kpi-label">Fragmented Value Chain</span>
+          <span class="kpi-detail">Intermediary layers separating farmers from lowland consumers</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main class="container main-content">
+    <!-- SECTION 1: THE ISSUE -->
+    <section id="the-issue" class="brief-section">
+      <div class="section-header">
+        <span class="section-tag">01 • Problem Statement</span>
+        <h2>The Issue: What is the specific challenge?</h2>
+      </div>
+
+      <div class="issue-layout">
+        <div class="issue-narrative card">
+          <p>
+            Indigenous highland vegetable farmers—predominantly <strong>Ibaloi</strong> and
+            <strong>Kankanaey</strong> communities in Benguet and Mountain Province—form the
+            backbone of Philippine temperate vegetable production. Benguet alone supplies roughly
+            <strong>89% of the country’s potatoes</strong>, <strong>82% of carrots</strong>,
+            <strong>81% of Baguio pechay</strong>, <strong>67% of cabbage</strong>, and
+            <strong>56% of chayote</strong>.
+          </p>
+          <p>
+            Despite anchoring national vegetable security, these smallholder farmers experience
+            severe <strong>income instability</strong>, recurring household debt cycles,
+            <strong>post-harvest spoilage exceeding 40%</strong> in conventional supply chains, and
+            sudden farmgate price crashes. Whenever farmgate prices drop below production and
+            hauling costs, growers absorb net financial losses and are frequently forced to leave
+            mature crops unharvested or discard unsold rotting produce.
+          </p>
+
+          <div class="callout-box">
+            <strong>Core Paradox:</strong> While lowland retail vegetable prices remain elevated
+            for consumers, highland IP farmers capture only a thin fraction of the final retail
+            peso while absorbing nearly all weather, spoilage, and price volatility risks.
+          </div>
+        </div>
+
+        <!-- Interactive Crop Data Chart Card -->
+        <aside class="chart-card card" aria-label="Highland Vegetable Production and Market Data">
+          <div class="chart-header">
+            <div>
+              <h3>Cordillera Crop Metrics</h3>
+              <p class="chart-subtitle" id="chartSubtitle">
+                Benguet’s share of national temperate vegetable output (%)
+              </p>
+            </div>
+            <div class="toggle-group" role="group" aria-label="Select metric view">
+              <button type="button" class="toggle-btn active" id="btnNationalShare">
+                National Share
+              </button>
+              <button type="button" class="toggle-btn" id="btnSpotShare">
+                Spot-Market %
+              </button>
+            </div>
+          </div>
+
+          <div class="bar-chart" id="barChartContainer"></div>
+          <p class="chart-footnote" id="chartFootnote">
+            Source context: Philippine Statistics Authority (PSA) &amp; DA-CAR highland crop profiles.
+          </p>
+        </aside>
+      </div>
+
+      <!-- Field Documentation Strip: Production & Harvest Reality -->
+      <div class="editorial-duo">
+        <figure class="photo-card card photo-portrait">
+          <div class="photo-frame">
+            <img
+              src="FARMER 4.jpg"
+              alt="Highland farmer carrying a heavy woven basket of harvested cabbages along a steep farm slope"
+              class="zoomable-photo"
+              loading="lazy"
+            />
+          </div>
+          <figcaption>
+            <span class="photo-tag">Manual Hauling Burden</span>
+            <strong>Steep Terrain Harvest Transport:</strong> Farmers manually haul heavy woven
+            baskets of freshly cut cabbages across terraced mountain slopes before reaching
+            farm-to-market roads.
+          </figcaption>
+        </figure>
+
+        <figure class="photo-card card photo-landscape">
+          <div class="photo-frame">
+            <img
+              src="FAERMER 5.jpg"
+              alt="Cordillera farmer standing in a frost- and market-affected highland cabbage field"
+              class="zoomable-photo"
+              loading="lazy"
+            />
+          </div>
+          <figcaption>
+            <span class="photo-tag">Price &amp; Weather Vulnerability</span>
+            <strong>Unsold &amp; Weather-Stressed Crops:</strong> When farmgate prices plunge
+            below harvesting costs—or frost and heavy rains strike—growers risk losing an entire
+            season’s capital investment in the field.
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- SECTION 2: ROOT CAUSE -->
+    <section id="root-cause" class="brief-section">
+      <div class="section-header">
+        <span class="section-tag">02 • Structural Drivers</span>
+        <h2>Root Cause: Why does this problem exist?</h2>
+      </div>
+
+      <!-- Interactive Supply Chain Flow Comparison -->
+      <div class="chain-panel card">
+        <div class="chain-top">
+          <div>
+            <h3>Supply Chain Architecture Comparison</h3>
+            <p class="muted-text">
+              Switch between the prevailing spot-market channel at the La Trinidad Vegetable Trading
+              Post and a shortened institutional model.
+            </p>
+          </div>
+          <div class="toggle-group" role="group" aria-label="Supply chain model">
+            <button type="button" class="toggle-btn active" id="btnChainSpot">
+              Current Spot-Market (5 Tiers)
+            </button>
+            <button type="button" class="toggle-btn" id="btnChainDirect">
+              Direct Institutional (2 Tiers)
+            </button>
+          </div>
+        </div>
+
+        <div class="chain-flow" id="chainFlow"></div>
+        <div class="chain-summary" id="chainSummary"></div>
+      </div>
+
+      <!-- Field & Trading Post Evidence Trio -->
+      <div class="evidence-trio">
+        <figure class="photo-card card">
+          <div class="photo-frame">
+            <img
+              src="FARMER 1.jpg"
+              alt="Highland farmer in rain gear inspecting lettuce inside wind- and rain-battered plastic tunnels"
+              class="zoomable-photo"
+              loading="lazy"
+            />
+          </div>
+          <figcaption>
+            <span class="photo-tag">Climate Exposure</span>
+            <strong>Monsoon &amp; Frost Risk:</strong> Growers tend leafy greens under battered
+            plastic tunnels in La Trinidad as waterlogging and typhoons threaten crop survival.
+          </figcaption>
+        </figure>
+
+        <figure class="photo-card card">
+          <div class="photo-frame">
+            <img
+              src="FARMER 3.jpg"
+              alt="Crowded woven baskets and plastic-wrapped sacks of highland vegetables inside the trading post"
+              class="zoomable-photo"
+              loading="lazy"
+            />
+          </div>
+          <figcaption>
+            <span class="photo-tag">Cold-Chain Deficit</span>
+            <strong>Trading Post Congestion:</strong> Harvests stacked in woven baskets and sacks
+            await unrefrigerated hauling at the trading post, accelerating bruising and spoilage.
+          </figcaption>
+        </figure>
+
+        <figure class="photo-card card">
+          <div class="photo-frame">
+            <img
+              src="FARMER 2.jpg"
+              alt="Wholesale vegetable trader sorting and grading highland greens at a market stall"
+              class="zoomable-photo"
+              loading="lazy"
+            />
+          </div>
+          <figcaption>
+            <span class="photo-tag">Intermediary Layers</span>
+            <strong>Multi-Tier Spot Grading:</strong> Produce passes through multiple disposers,
+            traders, and wholesalers—each taking a margin before vegetables reach retail buyers.
+          </figcaption>
+        </figure>
+      </div>
+
+      <!-- 5 Root Cause Cards -->
+      <div class="causes-grid">
+        <article class="cause-card card">
+          <span class="cause-num">01</span>
+          <h3>Multi-Layered, Intermediary-Heavy Supply Chains</h3>
+          <p>
+            Over 90% of major crops—such as cabbage (96%) and broccoli (91%)—pass through long,
+            circuitous spot-market channels (<em>farmer &rarr; disposer &rarr; buyer &rarr;
+            wholesaler-retailer &rarr; retailer</em>) centered at hubs like the La Trinidad
+            Vegetable Trading Post. Multiple middlemen capture the largest share of retail markups,
+            while farmers lack real-time price visibility.
+          </p>
+        </article>
+
+        <article class="cause-card card">
+          <span class="cause-num">02</span>
+          <h3>Informal Credit Dependency (“Supply-Financing” Trap)</h3>
+          <p>
+            Lacking formal land collateral or accessible bank credit, smallholder growers rely on
+            private financiers and traders (<em>disposers</em>) for seeds, fertilizers, and farm
+            inputs. In return, farmers are contractually or informally bound to sell harvests
+            exclusively to their financier at dictated prices, leaving minimal net earnings after
+            debt deductions.
+          </p>
+        </article>
+
+        <article class="cause-card card">
+          <span class="cause-num">03</span>
+          <h3>Inadequate Cold-Chain &amp; Processing Infrastructure</h3>
+          <p>
+            Because highland vegetables are highly perishable and local agro-processing remains
+            limited, the shortage of accessible cold storage facilities forces farmers to sell
+            immediately upon harvest regardless of depressed prices, accelerating spoilage during
+            transit delays or highway bottlenecks.
+          </p>
+        </article>
+
+        <article class="cause-card card">
+          <span class="cause-num">04</span>
+          <h3>Climate Hazards &amp; Rising Input Costs</h3>
+          <p>
+            Cordillera farms are regularly battered by typhoons, intense monsoon rains, and
+            seasonal frost events that wipe out standing crops, while volatile fuel and synthetic
+            fertilizer prices steadily inflate production and highland-to-lowland hauling costs.
+          </p>
+        </article>
+
+        <article class="cause-card card cause-card-wide">
+          <span class="cause-num">05</span>
+          <h3>Import Surges &amp; Agricultural Smuggling</h3>
+          <p>
+            Unchecked importation and technical smuggling of low-priced foreign vegetables—most
+            notably carrots and cabbage—flood lowland wholesale markets, artificially depressing
+            demand and severely undercutting farmgate prices for local Cordillera IP growers.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- SECTION 3: PROPOSED SOLUTION -->
+    <section id="proposed-solution" class="brief-section">
+      <div class="section-header">
+        <span class="section-tag">03 • Actionable Interventions</span>
+        <h2>Proposed Solution: What is a viable, fact-based way to address it?</h2>
+      </div>
+
+      <div class="solutions-grid">
+        <article class="solution-card card">
+          <div class="solution-badge">Pillar 1 • Market Access</div>
+          <h3>Shorten the Value Chain via Direct Institutional Linkages</h3>
+          <p>
+            Scale up structured direct-marketing agreements—such as the Department of
+            Agriculture–Cordillera’s (DA-CAR) <em>Kadiwa ng Pangulo</em> and direct hauling
+            programs—that connect organized IP farmer cooperatives and irrigators’ associations
+            directly to institutional buyers (supermarkets, hotels, hospitals, and LGUs).
+          </p>
+          <ul class="solution-list">
+            <li>Eliminates redundant spot-market middlemen layers</li>
+            <li>Establishes transparent, pre-agreed floor pricing</li>
+            <li>Builds collective bargaining power for smallholder growers</li>
+          </ul>
+        </article>
+
+        <article class="solution-card card">
+          <div class="solution-badge">Pillar 2 • Post-Harvest Infrastructure</div>
+          <h3>Expand Cooperative-Managed Cold Storage &amp; Processing</h3>
+          <p>
+            Accelerate the construction and cooperative operation of regional cold storage
+            facilities—coordinated by DA-CAR and the Benguet Agri-Pinoy Trading Center (BAPTC)—paired
+            with cost-efficient vegetable processing equipment.
+          </p>
+          <ul class="solution-list">
+            <li>Allows farmers to hold surplus harvests during market gluts</li>
+            <li>Reduces the &gt;40% post-harvest spoilage loss rate</li>
+            <li>Converts excess or cosmetically imperfect produce into shelf-stable goods</li>
+          </ul>
+        </article>
+
+        <article class="solution-card card">
+          <div class="solution-badge">Pillar 3 • Risk &amp; Trade Protection</div>
+          <h3>Strengthen Crop Insurance &amp; Anti-Smuggling Enforcement</h3>
+          <p>
+            Expand farmer enrollment in the Registry System for Basic Sectors in Agriculture
+            (RSBSA) to widen access to Philippine Crop Insurance Corporation (PCIC) indemnity
+            payouts, alongside stricter Bureau of Customs (BOC) and DA warehouse inspections.
+          </p>
+          <ul class="solution-list">
+            <li>Provides rapid financial recovery after typhoon and frost damage</li>
+            <li>Breaks reliance on predatory informal financiers after crop failure</li>
+            <li>Halts technical smuggling of carrots, cabbage, and temperate crops</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- SECTION 4: INTERACTIVE SIMULATOR -->
+    <section id="simulator" class="brief-section">
+      <div class="section-header">
+        <span class="section-tag">04 • Economic Modeling</span>
+        <h2>Farmer Net Return &amp; Spoilage Simulator (1,000 kg Harvest)</h2>
+      </div>
+
+      <div class="simulator-box card">
+        <div class="sim-controls">
+          <div class="control-group">
+            <label for="channelSelect">Supply Chain Channel</label>
+            <select id="channelSelect">
+              <option value="spot">Conventional Spot-Market (Financier-Tied)</option>
+              <option value="direct">Direct Cooperative / Kadiwa Linkage</option>
+            </select>
+          </div>
+
+          <div class="control-group">
+            <div class="label-row">
+              <label for="priceSlider">Base Farmgate Price</label>
+              <span class="val-pill" id="priceVal">₱18 / kg</span>
+            </div>
+            <input type="range" id="priceSlider" min="8" max="45" value="18" step="1" />
+          </div>
+
+          <div class="control-group">
+            <div class="label-row">
+              <label for="spoilageSlider">Post-Harvest Spoilage Rate</label>
+              <span class="val-pill" id="spoilageVal">40%</span>
+            </div>
+            <input type="range" id="spoilageSlider" min="5" max="55" value="40" step="1" />
+          </div>
+
+          <label class="checkbox-row" for="coldStorageCheck">
+            <input type="checkbox" id="coldStorageCheck" />
+            <span>Enable Cooperative Cold Storage (-20% spoilage &amp; +₱4/kg quality premium)</span>
+          </label>
+        </div>
+
+        <div class="sim-results">
+          <div class="result-metric">
+            <span class="res-label">Marketable Volume</span>
+            <strong class="res-value" id="resVolume">600 kg</strong>
+            <span class="res-sub">Out of 1,000 kg harvested</span>
+          </div>
+          <div class="result-metric">
+            <span class="res-label">Effective Farmgate Price</span>
+            <strong class="res-value" id="resEffPrice">₱15.30 / kg</strong>
+            <span class="res-sub" id="resChannelNote">After 15% financier/disposer deduction</span>
+          </div>
+          <div class="result-metric">
+            <span class="res-label">Production &amp; Hauling Cost</span>
+            <strong class="res-value">₱12,000</strong>
+            <span class="res-sub">₱12.00 / kg baseline input cost</span>
+          </div>
+          <div class="result-metric highlight" id="netCard">
+            <span class="res-label">Estimated Farmer Net Return</span>
+            <strong class="res-value" id="resNet">-₱2,820</strong>
+            <span class="res-sub" id="resStatus">Net financial loss — debt cycle risk</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-top">
+        <div>
+          <strong>Indigenous Peoples &amp; Highland Agriculture Policy Brief</strong>
+          <p>
+            Focus Area: Cordillera Administrative Region (CAR) • Benguet &amp; Mountain Province
+            Vegetable Value Chain
+          </p>
+        </div>
+        <p class="footer-note">
+          Prepared for Academic &amp; Policy Analysis • Grounded in DA-CAR, PSA, BAPTC &amp; PCIC
+          Frameworks
+        </p>
+      </div>
+
+      <div class="footer-credits">
+        <p class="credits-title">
+          Made by the students of BSIT 2B for completion of their final Requirement in CORDI 101
+        </p>
+        <ul class="credits-list">
+          <li>Mharionne Angayen</li>
+          <li>Pierre Louie Escano</li>
+          <li>Keilah Marcos</li>
+          <li>Margie Montalban</li>
+          <li>Mark Gezer Ocariza</li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Full-Image Lightbox Modal -->
+  <div class="lightbox" id="photoLightbox" aria-hidden="true">
+    <div class="lightbox-dialog">
+      <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Close image preview">
+        &times;
+      </button>
+      <img id="lightboxImg" src="" alt="" />
+      <p id="lightboxCaption"></p>
+    </div>
+  </div>
+
+  <script>
+    // 1. Crop Metrics Bar Chart Data & Toggle
+    const chartData = {
+      national: {
+        subtitle: "Benguet’s share of national temperate vegetable output (%)",
+        footnote: "Source context: Philippine Statistics Authority (PSA) highland crop production shares.",
+        items: [
+          { label: "Potatoes", value: 89, color: "var(--pine)" },
+          { label: "Carrots", value: 82, color: "var(--pine-mid)" },
+          { label: "Baguio Pechay", value: 81, color: "var(--pine-mid)" },
+          { label: "Cabbage", value: 67, color: "var(--amber)" },
+          { label: "Chayote", value: 56, color: "var(--terracotta)" }
+        ]
+      },
+      spot: {
+        subtitle: "Share of highland crops traded via multi-tier spot markets (%)",
+        footnote: "Source context: Cordillera highland vegetable value-chain assessments (La Trinidad hub).",
+        items: [
+          { label: "Cabbage", value: 96, color: "var(--terracotta)" },
+          { label: "Broccoli", value: 91, color: "var(--terracotta)" },
+          { label: "Carrots", value: 88, color: "var(--amber)" },
+          { label: "Potatoes", value: 84, color: "var(--pine-mid)" }
+        ]
+      }
+    };
+
+    const barChartContainer = document.getElementById("barChartContainer");
+    const chartSubtitle = document.getElementById("chartSubtitle");
+    const chartFootnote = document.getElementById("chartFootnote");
+    const btnNationalShare = document.getElementById("btnNationalShare");
+    const btnSpotShare = document.getElementById("btnSpotShare");
+
+    function renderChart(mode) {
+      const dataset = chartData[mode];
+      chartSubtitle.textContent = dataset.subtitle;
+      chartFootnote.textContent = dataset.footnote;
+
+      barChartContainer.innerHTML = dataset.items
+        .map(
+          (item) => `
+          <div class="bar-row">
+            <div class="bar-meta">
+              <span>${item.label}</span>
+              <strong>${item.value}%</strong>
+            </div>
+            <div class="bar-track">
+              <div class="bar-fill" style="width: ${item.value}%; background: ${item.color};"></div>
+            </div>
+          </div>
+        `
+        )
+        .join("");
+    }
+
+    btnNationalShare.addEventListener("click", () => {
+      btnNationalShare.classList.add("active");
+      btnSpotShare.classList.remove("active");
+      renderChart("national");
+    });
+
+    btnSpotShare.addEventListener("click", () => {
+      btnSpotShare.classList.add("active");
+      btnNationalShare.classList.remove("active");
+      renderChart("spot");
+    });
+
+    // 2. Supply Chain Comparison Toggle
+    const chainModels = {
+      spot: {
+        steps: [
+          { role: "IP Smallholder Farmer", desc: "Bears input, weather & price risk" },
+          { role: "Disposer / Financier", desc: "Deducts informal loan & sets price" },
+          { role: "Trading Post Buyer", desc: "Consolidates at La Trinidad hub" },
+          { role: "Wholesaler-Retailer", desc: "Hauls to lowland Divisoria / Balintawak" },
+          { role: "Public Market Retailer", desc: "Captures final consumer markup" }
+        ],
+        summary:
+          "<strong>Outcome:</strong> 4 intermediary handoffs delay transit, drive >40% spoilage, and compress the farmer's share of the final retail price."
+      },
+      direct: {
+        steps: [
+          { role: "IP Farmer Cooperative", desc: "Aggregates, grades & cold-stores harvest" },
+          { role: "Institutional Buyer / Kadiwa", desc: "Direct contract with supermarkets, LGUs & hospitals" }
+        ],
+        summary:
+          "<strong>Outcome:</strong> Eliminates 3 middleman layers, stabilizes farmgate floor prices, and preserves vegetable freshness through direct hauling."
+      }
+    };
+
+    const chainFlow = document.getElementById("chainFlow");
+    const chainSummary = document.getElementById("chainSummary");
+    const btnChainSpot = document.getElementById("btnChainSpot");
+    const btnChainDirect = document.getElementById("btnChainDirect");
+
+    function renderChain(type) {
+      const model = chainModels[type];
+      chainFlow.innerHTML = model.steps
+        .map(
+          (step, idx) => `
+          <div class="chain-node ${type === "direct" ? "direct-node" : ""}">
+            <span class="node-step">Stage ${idx + 1}</span>
+            <strong>${step.role}</strong>
+            <p>${step.desc}</p>
+          </div>
+        `
+        )
+        .join("");
+      chainSummary.innerHTML = model.summary;
+    }
+
+    btnChainSpot.addEventListener("click", () => {
+      btnChainSpot.classList.add("active");
+      btnChainDirect.classList.remove("active");
+      renderChain("spot");
+    });
+
+    btnChainDirect.addEventListener("click", () => {
+      btnChainDirect.classList.add("active");
+      btnChainSpot.classList.remove("active");
+      renderChain("direct");
+    });
+
+    // 3. Farmer Net Return Simulator
+    const channelSelect = document.getElementById("channelSelect");
+    const priceSlider = document.getElementById("priceSlider");
+    const spoilageSlider = document.getElementById("spoilageSlider");
+    const coldStorageCheck = document.getElementById("coldStorageCheck");
+
+    const priceVal = document.getElementById("priceVal");
+    const spoilageVal = document.getElementById("spoilageVal");
+    const resVolume = document.getElementById("resVolume");
+    const resEffPrice = document.getElementById("resEffPrice");
+    const resChannelNote = document.getElementById("resChannelNote");
+    const resNet = document.getElementById("resNet");
+    const resStatus = document.getElementById("resStatus");
+    const netCard = document.getElementById("netCard");
+
+    function updateSimulator() {
+      const harvestKg = 1000;
+      const baseCost = 12000; // ₱12/kg input & hauling
+      const isDirect = channelSelect.value === "direct";
+      const basePrice = Number(priceSlider.value);
+      let spoilage = Number(spoilageSlider.value);
+      const hasColdStorage = coldStorageCheck.checked;
+
+      priceVal.textContent = `₱${basePrice} / kg`;
+      spoilageVal.textContent = `${spoilage}%`;
+
+      if (hasColdStorage) {
+        spoilage = Math.max(5, spoilage - 20);
+      }
+
+      const sellableKg = Math.round(harvestKg * (1 - spoilage / 100));
+      let effectivePrice = isDirect ? basePrice * 1.15 : basePrice * 0.85;
+      if (hasColdStorage) {
+        effectivePrice += 4;
+      }
+
+      const grossRevenue = sellableKg * effectivePrice;
+      const netIncome = Math.round(grossRevenue - baseCost);
+
+      resVolume.textContent = `${sellableKg.toLocaleString()} kg`;
+      resEffPrice.textContent = `₱${effectivePrice.toFixed(2)} / kg`;
+      resChannelNote.textContent = isDirect
+        ? "+15% direct institutional margin"
+        : "After 15% financier/disposer deduction";
+
+      const formattedNet =
+        netIncome < 0
+          ? `-₱${Math.abs(netIncome).toLocaleString()}`
+          : `₱${netIncome.toLocaleString()}`;
+      resNet.textContent = formattedNet;
+
+      if (netIncome < 0) {
+        netCard.classList.add("loss");
+        netCard.classList.remove("profit");
+        resStatus.textContent = "Net financial loss — recurring debt cycle risk";
+      } else {
+        netCard.classList.add("profit");
+        netCard.classList.remove("loss");
+        resStatus.textContent = "Positive household margin — sustainable livelihood";
+      }
+    }
+
+    channelSelect.addEventListener("change", () => {
+      if (channelSelect.value === "direct") {
+        spoilageSlider.value = 15;
+      } else {
+        spoilageSlider.value = 40;
+      }
+      updateSimulator();
+    });
+
+    priceSlider.addEventListener("input", updateSimulator);
+    spoilageSlider.addEventListener("input", updateSimulator);
+    coldStorageCheck.addEventListener("change", updateSimulator);
+
+    // 4. Photo Lightbox Viewer
+    const lightbox = document.getElementById("photoLightbox");
+    const lightboxImg = document.getElementById("lightboxImg");
+    const lightboxCaption = document.getElementById("lightboxCaption");
+    const lightboxClose = document.getElementById("lightboxClose");
+
+    document.querySelectorAll(".zoomable-photo").forEach((img) => {
+      img.addEventListener("click", () => {
+        const figure = img.closest("figure");
+        const captionText = figure ? figure.querySelector("figcaption").innerText : img.alt;
+        lightboxImg.src = img.getAttribute("src");
+        lightboxImg.alt = img.alt;
+        lightboxCaption.textContent = captionText;
+        lightbox.classList.add("open");
+        lightbox.setAttribute("aria-hidden", "false");
+      });
+    });
+
+    function closeLightbox() {
+      lightbox.classList.remove("open");
+      lightbox.setAttribute("aria-hidden", "true");
+    }
+
+    lightboxClose.addEventListener("click", closeLightbox);
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && lightbox.classList.contains("open")) closeLightbox();
+    });
+
+    // Initialize interactive views
+    renderChart("national");
+    renderChain("spot");
+    updateSimulator();
+  </script>
+</body>
+</html>
